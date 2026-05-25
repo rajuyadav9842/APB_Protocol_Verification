@@ -1,0 +1,983 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Jul 31, 2025 at 05:18:34 EDT
+xrun
+	-clean
+	-input probe.tcl
+	-uvm
+	./Apb.sv
+	testbench.sv
+	-access +rwc
+xrun: *N,CLEAN: Removing existing directory ./xcelium.d.
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /home/install/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d
+file: ./Apb.sv
+	module worklib.apb_slave:sv
+		errors: 0, warnings: 0
+	interface worklib.dut_if:sv
+		errors: 0, warnings: 0
+file: testbench.sv
+	module worklib.tb_top:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		$unit_0x26af50e6
+		tb_top
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.apb_slave:sv <0x239bc952>
+			streams:  10, words:  4822
+		worklib.dut_if:sv <0x00766bdb>
+			streams: 566, words: 631889
+		worklib.cdns_uvm_pkg:sv <0x7bc63f47>
+			streams: 172, words: 275801
+		worklib.cdns_uvmapi:svp <0x020535f5>
+			streams:  27, words: 30300
+		worklib.cdns_assert2uvm_pkg:sv <0x54c1b413>
+			streams:   3, words:  1777
+		worklib.uvm_pkg:sv <0x3a2ecb66>
+			streams: 4534, words: 7082947
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                       Instances  Unique
+		Modules:                       2       2
+		Interfaces:                    1       1
+		Verilog packages:              4       4
+		Registers:                 13990   10195
+		Scalar wires:                  2       -
+		Named events:                  7      15
+		Always blocks:                12      12
+		Initial blocks:              290     161
+		Parallel blocks:              26      27
+		Pseudo assignments:            2       2
+		Assertions:                    4       4
+		Compilation units:             1       1
+		SV Class declarations:       199     313
+		SV Class specializations:    383     383
+	Writing initial simulation snapshot: worklib.tb_top:sv
+Loading snapshot worklib.tb_top:sv .................... Done
+SVSEED default: 1
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> source /home/install/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> database -open waves.shm -shm -default -event
+Created default SHM database waves.shm
+xcelium> probe -create -shm tb_top -depth all
+Created probe 1
+xcelium> run
+----------------------------------------------------------------
+CDNS-UVM-1.1d (22.09-s003)
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+xmsim: *W,PRPASZ: Packed array at "worklib.uvm_pkg::uvm_string_to_bits.uvm_string_to_bits" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.uvm_pkg::uvm_string_to_bits.uvm_string_to_bits' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "worklib.uvm_pkg::uvm_bits_to_string.str" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.uvm_pkg::uvm_bits_to_string.str' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "worklib.cdns_uvm_pkg::cdns_tcl_print_component.rval" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.cdns_uvm_pkg::cdns_tcl_print_component.rval' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "worklib.cdns_uvm_pkg::cdns_tcl_print_components.rval" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.cdns_uvm_pkg::cdns_tcl_print_components.rval' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "worklib.cdns_uvm_pkg::cdns_tcl_list_components.rval" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.cdns_uvm_pkg::cdns_tcl_list_components.rval' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+UVM_INFO @ 0: reporter [RNTST] Running test Apb_test...
+UVM_INFO Apb_sequence.sv(24) @ 0: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 0 :
+  psel=0, penable=0, pwrite=1,
+  paddr=3f, pwdata=3ec19eed, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 0: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 0: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x3f, data = 0x3ec19eed
+UVM_INFO Apb_monitor.sv(41) @ 60: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 60 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 3f, pwdata = 3ec19eed, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 100: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 100 :
+  psel=0, penable=0, pwrite=0,
+  paddr=3f, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 100: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 100: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x3f
+UVM_INFO Apb_monitor.sv(41) @ 120: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 120 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 3f, pwdata = 0, prdata = 3ec19eed, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 150: uvm_test_top.env.soc [APB_SCB] MATCH:  address 3f -> 3ec19eed
+UVM_INFO Apb_sequence.sv(24) @ 160: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 160 :
+  psel=0, penable=0, pwrite=1,
+  paddr=c7, pwdata=654bbcad, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 160: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 160: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xc7, data = 0x654bbcad
+UVM_INFO Apb_monitor.sv(41) @ 180: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 180 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = c7, pwdata = 654bbcad, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 220: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 220 :
+  psel=0, penable=0, pwrite=0,
+  paddr=c7, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 220: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 220: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xc7
+UVM_INFO Apb_monitor.sv(41) @ 240: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 240 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = c7, pwdata = 0, prdata = 654bbcad, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 270: uvm_test_top.env.soc [APB_SCB] MATCH:  address c7 -> 654bbcad
+UVM_INFO Apb_sequence.sv(24) @ 280: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 280 :
+  psel=0, penable=0, pwrite=1,
+  paddr=4, pwdata=c356ae81, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 280: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 280: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x4, data = 0xc356ae81
+UVM_INFO Apb_monitor.sv(41) @ 300: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 300 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 4, pwdata = c356ae81, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 340: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 340 :
+  psel=0, penable=0, pwrite=0,
+  paddr=4, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 340: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 340: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x4
+UVM_INFO Apb_monitor.sv(41) @ 360: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 360 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 4, pwdata = 0, prdata = c356ae81, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 390: uvm_test_top.env.soc [APB_SCB] MATCH:  address 4 -> c356ae81
+UVM_INFO Apb_sequence.sv(24) @ 400: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 400 :
+  psel=0, penable=0, pwrite=1,
+  paddr=f6, pwdata=bfb7760f, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 400: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 400: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xf6, data = 0xbfb7760f
+UVM_INFO Apb_monitor.sv(41) @ 420: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 420 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = f6, pwdata = bfb7760f, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 460: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 460 :
+  psel=0, penable=0, pwrite=0,
+  paddr=f6, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 460: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 460: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xf6
+UVM_INFO Apb_monitor.sv(41) @ 480: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 480 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = f6, pwdata = 0, prdata = bfb7760f, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 510: uvm_test_top.env.soc [APB_SCB] MATCH:  address f6 -> bfb7760f
+UVM_INFO Apb_sequence.sv(24) @ 520: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 520 :
+  psel=0, penable=0, pwrite=1,
+  paddr=9e, pwdata=ff5586b2, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 520: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 520: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x9e, data = 0xff5586b2
+UVM_INFO Apb_monitor.sv(41) @ 540: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 540 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 9e, pwdata = ff5586b2, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 580: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 580 :
+  psel=0, penable=0, pwrite=0,
+  paddr=9e, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 580: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 580: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x9e
+UVM_INFO Apb_monitor.sv(41) @ 600: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 600 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 9e, pwdata = 0, prdata = ff5586b2, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 630: uvm_test_top.env.soc [APB_SCB] MATCH:  address 9e -> ff5586b2
+UVM_INFO Apb_sequence.sv(24) @ 640: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 640 :
+  psel=0, penable=0, pwrite=1,
+  paddr=fa, pwdata=d18cf80e, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 640: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 640: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xfa, data = 0xd18cf80e
+UVM_INFO Apb_monitor.sv(41) @ 660: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 660 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = fa, pwdata = d18cf80e, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 700: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 700 :
+  psel=0, penable=0, pwrite=0,
+  paddr=fa, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 700: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 700: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xfa
+UVM_INFO Apb_monitor.sv(41) @ 720: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 720 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = fa, pwdata = 0, prdata = d18cf80e, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 750: uvm_test_top.env.soc [APB_SCB] MATCH:  address fa -> d18cf80e
+UVM_INFO Apb_sequence.sv(24) @ 760: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 760 :
+  psel=0, penable=0, pwrite=1,
+  paddr=c, pwdata=9a6c3351, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 760: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 760: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xc, data = 0x9a6c3351
+UVM_INFO Apb_monitor.sv(41) @ 780: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 780 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = c, pwdata = 9a6c3351, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 820: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 820 :
+  psel=0, penable=0, pwrite=0,
+  paddr=c, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 820: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 820: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xc
+UVM_INFO Apb_monitor.sv(41) @ 840: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 840 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = c, pwdata = 0, prdata = 9a6c3351, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 870: uvm_test_top.env.soc [APB_SCB] MATCH:  address c -> 9a6c3351
+UVM_INFO Apb_sequence.sv(24) @ 880: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 880 :
+  psel=0, penable=0, pwrite=1,
+  paddr=d3, pwdata=1a1444e, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 880: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 880: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xd3, data = 0x1a1444e
+UVM_INFO Apb_monitor.sv(41) @ 900: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 900 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = d3, pwdata = 1a1444e, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 940: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 940 :
+  psel=0, penable=0, pwrite=0,
+  paddr=d3, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 940: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 940: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xd3
+UVM_INFO Apb_monitor.sv(41) @ 960: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 960 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = d3, pwdata = 0, prdata = 1a1444e, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 990: uvm_test_top.env.soc [APB_SCB] MATCH:  address d3 -> 1a1444e
+UVM_INFO Apb_sequence.sv(24) @ 1000: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1000 :
+  psel=0, penable=0, pwrite=1,
+  paddr=50, pwdata=f8a91d8d, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1000: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 1000: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x50, data = 0xf8a91d8d
+UVM_INFO Apb_monitor.sv(41) @ 1020: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1020 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 50, pwdata = f8a91d8d, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 1060: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1060 :
+  psel=0, penable=0, pwrite=0,
+  paddr=50, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1060: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 1060: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x50
+UVM_INFO Apb_monitor.sv(41) @ 1080: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1080 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 50, pwdata = 0, prdata = f8a91d8d, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 1110: uvm_test_top.env.soc [APB_SCB] MATCH:  address 50 -> f8a91d8d
+UVM_INFO Apb_sequence.sv(24) @ 1120: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1120 :
+  psel=0, penable=0, pwrite=1,
+  paddr=81, pwdata=35b4d858, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1120: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 1120: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x81, data = 0x35b4d858
+UVM_INFO Apb_monitor.sv(41) @ 1140: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1140 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 81, pwdata = 35b4d858, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 1180: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1180 :
+  psel=0, penable=0, pwrite=0,
+  paddr=81, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1180: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 1180: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x81
+UVM_INFO Apb_monitor.sv(41) @ 1200: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1200 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 81, pwdata = 0, prdata = 35b4d858, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 1230: uvm_test_top.env.soc [APB_SCB] MATCH:  address 81 -> 35b4d858
+UVM_INFO Apb_sequence.sv(24) @ 1240: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1240 :
+  psel=0, penable=0, pwrite=1,
+  paddr=68, pwdata=69685d0a, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1240: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 1240: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x68, data = 0x69685d0a
+UVM_INFO Apb_monitor.sv(41) @ 1260: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1260 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 68, pwdata = 69685d0a, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 1300: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1300 :
+  psel=0, penable=0, pwrite=0,
+  paddr=68, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1300: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 1300: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x68
+UVM_INFO Apb_monitor.sv(41) @ 1320: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1320 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 68, pwdata = 0, prdata = 69685d0a, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 1350: uvm_test_top.env.soc [APB_SCB] MATCH:  address 68 -> 69685d0a
+UVM_INFO Apb_sequence.sv(24) @ 1360: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1360 :
+  psel=0, penable=0, pwrite=1,
+  paddr=4, pwdata=880736a3, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1360: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 1360: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x4, data = 0x880736a3
+UVM_INFO Apb_monitor.sv(41) @ 1380: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1380 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 4, pwdata = 880736a3, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 1420: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1420 :
+  psel=0, penable=0, pwrite=0,
+  paddr=4, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1420: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 1420: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x4
+UVM_INFO Apb_monitor.sv(41) @ 1440: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1440 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 4, pwdata = 0, prdata = 880736a3, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 1470: uvm_test_top.env.soc [APB_SCB] MATCH:  address 4 -> 880736a3
+UVM_INFO Apb_sequence.sv(24) @ 1480: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1480 :
+  psel=0, penable=0, pwrite=1,
+  paddr=55, pwdata=91916523, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1480: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 1480: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x55, data = 0x91916523
+UVM_INFO Apb_monitor.sv(41) @ 1500: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1500 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 55, pwdata = 91916523, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 1540: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1540 :
+  psel=0, penable=0, pwrite=0,
+  paddr=55, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1540: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 1540: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x55
+UVM_INFO Apb_monitor.sv(41) @ 1560: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1560 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 55, pwdata = 0, prdata = 91916523, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 1590: uvm_test_top.env.soc [APB_SCB] MATCH:  address 55 -> 91916523
+UVM_INFO Apb_sequence.sv(24) @ 1600: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1600 :
+  psel=0, penable=0, pwrite=1,
+  paddr=5b, pwdata=3971695d, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1600: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 1600: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x5b, data = 0x3971695d
+UVM_INFO Apb_monitor.sv(41) @ 1620: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1620 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 5b, pwdata = 3971695d, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 1660: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1660 :
+  psel=0, penable=0, pwrite=0,
+  paddr=5b, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1660: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 1660: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x5b
+UVM_INFO Apb_monitor.sv(41) @ 1680: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1680 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 5b, pwdata = 0, prdata = 3971695d, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 1710: uvm_test_top.env.soc [APB_SCB] MATCH:  address 5b -> 3971695d
+UVM_INFO Apb_sequence.sv(24) @ 1720: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1720 :
+  psel=0, penable=0, pwrite=1,
+  paddr=16, pwdata=cc3cc27e, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1720: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 1720: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x16, data = 0xcc3cc27e
+UVM_INFO Apb_monitor.sv(41) @ 1740: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1740 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 16, pwdata = cc3cc27e, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 1780: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1780 :
+  psel=0, penable=0, pwrite=0,
+  paddr=16, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1780: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 1780: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x16
+UVM_INFO Apb_monitor.sv(41) @ 1800: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1800 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 16, pwdata = 0, prdata = cc3cc27e, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 1830: uvm_test_top.env.soc [APB_SCB] MATCH:  address 16 -> cc3cc27e
+UVM_INFO Apb_sequence.sv(24) @ 1840: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1840 :
+  psel=0, penable=0, pwrite=1,
+  paddr=87, pwdata=a24564b4, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1840: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 1840: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x87, data = 0xa24564b4
+UVM_INFO Apb_monitor.sv(41) @ 1860: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1860 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 87, pwdata = a24564b4, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 1900: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1900 :
+  psel=0, penable=0, pwrite=0,
+  paddr=87, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1900: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 1900: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x87
+UVM_INFO Apb_monitor.sv(41) @ 1920: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1920 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 87, pwdata = 0, prdata = a24564b4, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 1950: uvm_test_top.env.soc [APB_SCB] MATCH:  address 87 -> a24564b4
+UVM_INFO Apb_sequence.sv(24) @ 1960: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 1960 :
+  psel=0, penable=0, pwrite=1,
+  paddr=ad, pwdata=16a3dca3, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 1960: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 1960: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xad, data = 0x16a3dca3
+UVM_INFO Apb_monitor.sv(41) @ 1980: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 1980 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = ad, pwdata = 16a3dca3, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 2020: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2020 :
+  psel=0, penable=0, pwrite=0,
+  paddr=ad, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2020: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 2020: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xad
+UVM_INFO Apb_monitor.sv(41) @ 2040: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2040 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = ad, pwdata = 0, prdata = 16a3dca3, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 2070: uvm_test_top.env.soc [APB_SCB] MATCH:  address ad -> 16a3dca3
+UVM_INFO Apb_sequence.sv(24) @ 2080: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2080 :
+  psel=0, penable=0, pwrite=1,
+  paddr=88, pwdata=75eda979, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2080: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 2080: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x88, data = 0x75eda979
+UVM_INFO Apb_monitor.sv(41) @ 2100: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2100 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 88, pwdata = 75eda979, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 2140: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2140 :
+  psel=0, penable=0, pwrite=0,
+  paddr=88, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2140: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 2140: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x88
+UVM_INFO Apb_monitor.sv(41) @ 2160: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2160 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 88, pwdata = 0, prdata = 75eda979, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 2190: uvm_test_top.env.soc [APB_SCB] MATCH:  address 88 -> 75eda979
+UVM_INFO Apb_sequence.sv(24) @ 2200: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2200 :
+  psel=0, penable=0, pwrite=1,
+  paddr=18, pwdata=c022cb36, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2200: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 2200: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x18, data = 0xc022cb36
+UVM_INFO Apb_monitor.sv(41) @ 2220: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2220 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 18, pwdata = c022cb36, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 2260: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2260 :
+  psel=0, penable=0, pwrite=0,
+  paddr=18, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2260: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 2260: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x18
+UVM_INFO Apb_monitor.sv(41) @ 2280: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2280 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 18, pwdata = 0, prdata = c022cb36, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 2310: uvm_test_top.env.soc [APB_SCB] MATCH:  address 18 -> c022cb36
+UVM_INFO Apb_sequence.sv(24) @ 2320: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2320 :
+  psel=0, penable=0, pwrite=1,
+  paddr=5e, pwdata=ffb6db, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2320: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 2320: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x5e, data = 0xffb6db
+UVM_INFO Apb_monitor.sv(41) @ 2340: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2340 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 5e, pwdata = ffb6db, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 2380: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2380 :
+  psel=0, penable=0, pwrite=0,
+  paddr=5e, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2380: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 2380: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x5e
+UVM_INFO Apb_monitor.sv(41) @ 2400: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2400 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 5e, pwdata = 0, prdata = ffb6db, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 2430: uvm_test_top.env.soc [APB_SCB] MATCH:  address 5e -> ffb6db
+UVM_INFO Apb_sequence.sv(24) @ 2440: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2440 :
+  psel=0, penable=0, pwrite=1,
+  paddr=58, pwdata=d4760338, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2440: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 2440: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x58, data = 0xd4760338
+UVM_INFO Apb_monitor.sv(41) @ 2460: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2460 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 58, pwdata = d4760338, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 2500: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2500 :
+  psel=0, penable=0, pwrite=0,
+  paddr=58, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2500: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 2500: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x58
+UVM_INFO Apb_monitor.sv(41) @ 2520: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2520 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 58, pwdata = 0, prdata = d4760338, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 2550: uvm_test_top.env.soc [APB_SCB] MATCH:  address 58 -> d4760338
+UVM_INFO Apb_sequence.sv(24) @ 2560: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2560 :
+  psel=0, penable=0, pwrite=1,
+  paddr=8, pwdata=9e94197e, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2560: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 2560: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x8, data = 0x9e94197e
+UVM_INFO Apb_monitor.sv(41) @ 2580: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2580 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 8, pwdata = 9e94197e, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 2620: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2620 :
+  psel=0, penable=0, pwrite=0,
+  paddr=8, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2620: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 2620: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x8
+UVM_INFO Apb_monitor.sv(41) @ 2640: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2640 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 8, pwdata = 0, prdata = 9e94197e, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 2670: uvm_test_top.env.soc [APB_SCB] MATCH:  address 8 -> 9e94197e
+UVM_INFO Apb_sequence.sv(24) @ 2680: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2680 :
+  psel=0, penable=0, pwrite=1,
+  paddr=6d, pwdata=539d84aa, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2680: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 2680: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x6d, data = 0x539d84aa
+UVM_INFO Apb_monitor.sv(41) @ 2700: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2700 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 6d, pwdata = 539d84aa, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 2740: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2740 :
+  psel=0, penable=0, pwrite=0,
+  paddr=6d, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2740: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 2740: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x6d
+UVM_INFO Apb_monitor.sv(41) @ 2760: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2760 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 6d, pwdata = 0, prdata = 539d84aa, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 2790: uvm_test_top.env.soc [APB_SCB] MATCH:  address 6d -> 539d84aa
+UVM_INFO Apb_sequence.sv(24) @ 2800: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2800 :
+  psel=0, penable=0, pwrite=1,
+  paddr=87, pwdata=f39244bd, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2800: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 2800: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x87, data = 0xf39244bd
+UVM_INFO Apb_monitor.sv(41) @ 2820: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2820 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 87, pwdata = f39244bd, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 2860: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2860 :
+  psel=0, penable=0, pwrite=0,
+  paddr=87, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2860: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 2860: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x87
+UVM_INFO Apb_monitor.sv(41) @ 2880: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2880 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 87, pwdata = 0, prdata = f39244bd, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 2910: uvm_test_top.env.soc [APB_SCB] MATCH:  address 87 -> f39244bd
+UVM_INFO Apb_sequence.sv(24) @ 2920: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2920 :
+  psel=0, penable=0, pwrite=1,
+  paddr=57, pwdata=8a2eceb7, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2920: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 2920: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x57, data = 0x8a2eceb7
+UVM_INFO Apb_monitor.sv(41) @ 2940: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 2940 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 57, pwdata = 8a2eceb7, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 2980: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 2980 :
+  psel=0, penable=0, pwrite=0,
+  paddr=57, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 2980: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 2980: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x57
+UVM_INFO Apb_monitor.sv(41) @ 3000: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3000 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 57, pwdata = 0, prdata = 8a2eceb7, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 3030: uvm_test_top.env.soc [APB_SCB] MATCH:  address 57 -> 8a2eceb7
+UVM_INFO Apb_sequence.sv(24) @ 3040: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3040 :
+  psel=0, penable=0, pwrite=1,
+  paddr=db, pwdata=b364b96b, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3040: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 3040: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xdb, data = 0xb364b96b
+UVM_INFO Apb_monitor.sv(41) @ 3060: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3060 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = db, pwdata = b364b96b, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 3100: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3100 :
+  psel=0, penable=0, pwrite=0,
+  paddr=db, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3100: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 3100: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xdb
+UVM_INFO Apb_monitor.sv(41) @ 3120: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3120 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = db, pwdata = 0, prdata = b364b96b, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 3150: uvm_test_top.env.soc [APB_SCB] MATCH:  address db -> b364b96b
+UVM_INFO Apb_sequence.sv(24) @ 3160: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3160 :
+  psel=0, penable=0, pwrite=1,
+  paddr=15, pwdata=d3426e06, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3160: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 3160: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x15, data = 0xd3426e06
+UVM_INFO Apb_monitor.sv(41) @ 3180: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3180 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 15, pwdata = d3426e06, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 3220: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3220 :
+  psel=0, penable=0, pwrite=0,
+  paddr=15, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3220: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 3220: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x15
+UVM_INFO Apb_monitor.sv(41) @ 3240: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3240 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 15, pwdata = 0, prdata = d3426e06, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 3270: uvm_test_top.env.soc [APB_SCB] MATCH:  address 15 -> d3426e06
+UVM_INFO Apb_sequence.sv(24) @ 3280: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3280 :
+  psel=0, penable=0, pwrite=1,
+  paddr=4, pwdata=de0b7788, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3280: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 3280: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x4, data = 0xde0b7788
+UVM_INFO Apb_monitor.sv(41) @ 3300: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3300 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 4, pwdata = de0b7788, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 3340: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3340 :
+  psel=0, penable=0, pwrite=0,
+  paddr=4, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3340: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 3340: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x4
+UVM_INFO Apb_monitor.sv(41) @ 3360: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3360 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 4, pwdata = 0, prdata = de0b7788, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 3390: uvm_test_top.env.soc [APB_SCB] MATCH:  address 4 -> de0b7788
+UVM_INFO Apb_sequence.sv(24) @ 3400: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3400 :
+  psel=0, penable=0, pwrite=1,
+  paddr=a8, pwdata=d3bfd5f1, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3400: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 3400: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xa8, data = 0xd3bfd5f1
+UVM_INFO Apb_monitor.sv(41) @ 3420: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3420 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = a8, pwdata = d3bfd5f1, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 3460: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3460 :
+  psel=0, penable=0, pwrite=0,
+  paddr=a8, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3460: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 3460: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xa8
+UVM_INFO Apb_monitor.sv(41) @ 3480: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3480 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = a8, pwdata = 0, prdata = d3bfd5f1, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 3510: uvm_test_top.env.soc [APB_SCB] MATCH:  address a8 -> d3bfd5f1
+UVM_INFO Apb_sequence.sv(24) @ 3520: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3520 :
+  psel=0, penable=0, pwrite=1,
+  paddr=2, pwdata=c01bfe42, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3520: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 3520: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x2, data = 0xc01bfe42
+UVM_INFO Apb_monitor.sv(41) @ 3540: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3540 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 2, pwdata = c01bfe42, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 3580: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3580 :
+  psel=0, penable=0, pwrite=0,
+  paddr=2, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3580: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 3580: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x2
+UVM_INFO Apb_monitor.sv(41) @ 3600: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3600 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 2, pwdata = 0, prdata = c01bfe42, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 3630: uvm_test_top.env.soc [APB_SCB] MATCH:  address 2 -> c01bfe42
+UVM_INFO Apb_sequence.sv(24) @ 3640: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3640 :
+  psel=0, penable=0, pwrite=1,
+  paddr=10, pwdata=3f11874c, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3640: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 3640: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x10, data = 0x3f11874c
+UVM_INFO Apb_monitor.sv(41) @ 3660: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3660 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 10, pwdata = 3f11874c, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 3700: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3700 :
+  psel=0, penable=0, pwrite=0,
+  paddr=10, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3700: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 3700: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x10
+UVM_INFO Apb_monitor.sv(41) @ 3720: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3720 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 10, pwdata = 0, prdata = 3f11874c, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 3750: uvm_test_top.env.soc [APB_SCB] MATCH:  address 10 -> 3f11874c
+UVM_INFO Apb_sequence.sv(24) @ 3760: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3760 :
+  psel=0, penable=0, pwrite=1,
+  paddr=d4, pwdata=144596a, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3760: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 3760: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xd4, data = 0x144596a
+UVM_INFO Apb_monitor.sv(41) @ 3780: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3780 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = d4, pwdata = 144596a, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 3820: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3820 :
+  psel=0, penable=0, pwrite=0,
+  paddr=d4, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3820: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 3820: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xd4
+UVM_INFO Apb_monitor.sv(41) @ 3840: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3840 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = d4, pwdata = 0, prdata = 144596a, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 3870: uvm_test_top.env.soc [APB_SCB] MATCH:  address d4 -> 144596a
+UVM_INFO Apb_sequence.sv(24) @ 3880: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3880 :
+  psel=0, penable=0, pwrite=1,
+  paddr=4d, pwdata=61cd0142, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3880: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 3880: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x4d, data = 0x61cd0142
+UVM_INFO Apb_monitor.sv(41) @ 3900: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3900 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 4d, pwdata = 61cd0142, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 3940: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 3940 :
+  psel=0, penable=0, pwrite=0,
+  paddr=4d, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 3940: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 3940: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x4d
+UVM_INFO Apb_monitor.sv(41) @ 3960: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 3960 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 4d, pwdata = 0, prdata = 61cd0142, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 3990: uvm_test_top.env.soc [APB_SCB] MATCH:  address 4d -> 61cd0142
+UVM_INFO Apb_sequence.sv(24) @ 4000: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4000 :
+  psel=0, penable=0, pwrite=1,
+  paddr=7b, pwdata=ad40fe01, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4000: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 4000: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x7b, data = 0xad40fe01
+UVM_INFO Apb_monitor.sv(41) @ 4020: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4020 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 7b, pwdata = ad40fe01, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 4060: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4060 :
+  psel=0, penable=0, pwrite=0,
+  paddr=7b, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4060: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 4060: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x7b
+UVM_INFO Apb_monitor.sv(41) @ 4080: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4080 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 7b, pwdata = 0, prdata = ad40fe01, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 4110: uvm_test_top.env.soc [APB_SCB] MATCH:  address 7b -> ad40fe01
+UVM_INFO Apb_sequence.sv(24) @ 4120: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4120 :
+  psel=0, penable=0, pwrite=1,
+  paddr=5f, pwdata=ef5cc4a7, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4120: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 4120: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x5f, data = 0xef5cc4a7
+UVM_INFO Apb_monitor.sv(41) @ 4140: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4140 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 5f, pwdata = ef5cc4a7, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 4180: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4180 :
+  psel=0, penable=0, pwrite=0,
+  paddr=5f, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4180: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 4180: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x5f
+UVM_INFO Apb_monitor.sv(41) @ 4200: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4200 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 5f, pwdata = 0, prdata = ef5cc4a7, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 4230: uvm_test_top.env.soc [APB_SCB] MATCH:  address 5f -> ef5cc4a7
+UVM_INFO Apb_sequence.sv(24) @ 4240: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4240 :
+  psel=0, penable=0, pwrite=1,
+  paddr=f7, pwdata=c411ec07, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4240: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 4240: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xf7, data = 0xc411ec07
+UVM_INFO Apb_monitor.sv(41) @ 4260: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4260 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = f7, pwdata = c411ec07, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 4300: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4300 :
+  psel=0, penable=0, pwrite=0,
+  paddr=f7, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4300: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 4300: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xf7
+UVM_INFO Apb_monitor.sv(41) @ 4320: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4320 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = f7, pwdata = 0, prdata = c411ec07, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 4350: uvm_test_top.env.soc [APB_SCB] MATCH:  address f7 -> c411ec07
+UVM_INFO Apb_sequence.sv(24) @ 4360: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4360 :
+  psel=0, penable=0, pwrite=1,
+  paddr=45, pwdata=dc045c7b, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4360: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 4360: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x45, data = 0xdc045c7b
+UVM_INFO Apb_monitor.sv(41) @ 4380: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4380 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 45, pwdata = dc045c7b, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 4420: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4420 :
+  psel=0, penable=0, pwrite=0,
+  paddr=45, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4420: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 4420: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x45
+UVM_INFO Apb_monitor.sv(41) @ 4440: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4440 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 45, pwdata = 0, prdata = dc045c7b, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 4470: uvm_test_top.env.soc [APB_SCB] MATCH:  address 45 -> dc045c7b
+UVM_INFO Apb_sequence.sv(24) @ 4480: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4480 :
+  psel=0, penable=0, pwrite=1,
+  paddr=48, pwdata=924ca2a9, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4480: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 4480: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x48, data = 0x924ca2a9
+UVM_INFO Apb_monitor.sv(41) @ 4500: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4500 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 48, pwdata = 924ca2a9, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 4540: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4540 :
+  psel=0, penable=0, pwrite=0,
+  paddr=48, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4540: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 4540: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x48
+UVM_INFO Apb_monitor.sv(41) @ 4560: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4560 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 48, pwdata = 0, prdata = 924ca2a9, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 4590: uvm_test_top.env.soc [APB_SCB] MATCH:  address 48 -> 924ca2a9
+UVM_INFO Apb_sequence.sv(24) @ 4600: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4600 :
+  psel=0, penable=0, pwrite=1,
+  paddr=0, pwdata=33803dbe, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4600: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 4600: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x0, data = 0x33803dbe
+UVM_INFO Apb_monitor.sv(41) @ 4620: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4620 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 0, pwdata = 33803dbe, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 4660: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4660 :
+  psel=0, penable=0, pwrite=0,
+  paddr=0, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4660: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 4660: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x0
+UVM_INFO Apb_monitor.sv(41) @ 4680: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4680 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 0, pwdata = 0, prdata = 33803dbe, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 4710: uvm_test_top.env.soc [APB_SCB] MATCH:  address 0 -> 33803dbe
+UVM_INFO Apb_sequence.sv(24) @ 4720: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4720 :
+  psel=0, penable=0, pwrite=1,
+  paddr=6e, pwdata=17f121e7, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4720: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 4720: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x6e, data = 0x17f121e7
+UVM_INFO Apb_monitor.sv(41) @ 4740: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4740 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 6e, pwdata = 17f121e7, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 4780: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4780 :
+  psel=0, penable=0, pwrite=0,
+  paddr=6e, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4780: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 4780: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x6e
+UVM_INFO Apb_monitor.sv(41) @ 4800: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4800 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 6e, pwdata = 0, prdata = 17f121e7, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 4830: uvm_test_top.env.soc [APB_SCB] MATCH:  address 6e -> 17f121e7
+UVM_INFO Apb_sequence.sv(24) @ 4840: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4840 :
+  psel=0, penable=0, pwrite=1,
+  paddr=90, pwdata=4265e79d, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4840: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 4840: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x90, data = 0x4265e79d
+UVM_INFO Apb_monitor.sv(41) @ 4860: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4860 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 90, pwdata = 4265e79d, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 4900: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4900 :
+  psel=0, penable=0, pwrite=0,
+  paddr=90, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4900: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 4900: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x90
+UVM_INFO Apb_monitor.sv(41) @ 4920: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4920 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 90, pwdata = 0, prdata = 4265e79d, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 4950: uvm_test_top.env.soc [APB_SCB] MATCH:  address 90 -> 4265e79d
+UVM_INFO Apb_sequence.sv(24) @ 4960: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 4960 :
+  psel=0, penable=0, pwrite=1,
+  paddr=68, pwdata=6382773a, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 4960: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 4960: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x68, data = 0x6382773a
+UVM_INFO Apb_monitor.sv(41) @ 4980: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 4980 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 68, pwdata = 6382773a, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 5020: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5020 :
+  psel=0, penable=0, pwrite=0,
+  paddr=68, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5020: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 5020: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x68
+UVM_INFO Apb_monitor.sv(41) @ 5040: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5040 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 68, pwdata = 0, prdata = 6382773a, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 5070: uvm_test_top.env.soc [APB_SCB] MATCH:  address 68 -> 6382773a
+UVM_INFO Apb_sequence.sv(24) @ 5080: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5080 :
+  psel=0, penable=0, pwrite=1,
+  paddr=f5, pwdata=bc1fdaeb, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5080: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 5080: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xf5, data = 0xbc1fdaeb
+UVM_INFO Apb_monitor.sv(41) @ 5100: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5100 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = f5, pwdata = bc1fdaeb, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 5140: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5140 :
+  psel=0, penable=0, pwrite=0,
+  paddr=f5, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5140: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 5140: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xf5
+UVM_INFO Apb_monitor.sv(41) @ 5160: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5160 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = f5, pwdata = 0, prdata = bc1fdaeb, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 5190: uvm_test_top.env.soc [APB_SCB] MATCH:  address f5 -> bc1fdaeb
+UVM_INFO Apb_sequence.sv(24) @ 5200: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5200 :
+  psel=0, penable=0, pwrite=1,
+  paddr=37, pwdata=b3131456, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5200: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 5200: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x37, data = 0xb3131456
+UVM_INFO Apb_monitor.sv(41) @ 5220: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5220 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 37, pwdata = b3131456, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 5260: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5260 :
+  psel=0, penable=0, pwrite=0,
+  paddr=37, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5260: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 5260: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x37
+UVM_INFO Apb_monitor.sv(41) @ 5280: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5280 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 37, pwdata = 0, prdata = b3131456, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 5310: uvm_test_top.env.soc [APB_SCB] MATCH:  address 37 -> b3131456
+UVM_INFO Apb_sequence.sv(24) @ 5320: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5320 :
+  psel=0, penable=0, pwrite=1,
+  paddr=2e, pwdata=94f1a2a8, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5320: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 5320: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x2e, data = 0x94f1a2a8
+UVM_INFO Apb_monitor.sv(41) @ 5340: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5340 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 2e, pwdata = 94f1a2a8, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 5380: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5380 :
+  psel=0, penable=0, pwrite=0,
+  paddr=2e, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5380: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 5380: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x2e
+UVM_INFO Apb_monitor.sv(41) @ 5400: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5400 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 2e, pwdata = 0, prdata = 94f1a2a8, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 5430: uvm_test_top.env.soc [APB_SCB] MATCH:  address 2e -> 94f1a2a8
+UVM_INFO Apb_sequence.sv(24) @ 5440: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5440 :
+  psel=0, penable=0, pwrite=1,
+  paddr=db, pwdata=6d77fae1, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5440: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 5440: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xdb, data = 0x6d77fae1
+UVM_INFO Apb_monitor.sv(41) @ 5460: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5460 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = db, pwdata = 6d77fae1, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 5500: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5500 :
+  psel=0, penable=0, pwrite=0,
+  paddr=db, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5500: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 5500: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xdb
+UVM_INFO Apb_monitor.sv(41) @ 5520: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5520 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = db, pwdata = 0, prdata = 6d77fae1, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 5550: uvm_test_top.env.soc [APB_SCB] MATCH:  address db -> 6d77fae1
+UVM_INFO Apb_sequence.sv(24) @ 5560: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5560 :
+  psel=0, penable=0, pwrite=1,
+  paddr=3d, pwdata=30e9a801, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5560: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 5560: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x3d, data = 0x30e9a801
+UVM_INFO Apb_monitor.sv(41) @ 5580: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5580 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 3d, pwdata = 30e9a801, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 5620: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5620 :
+  psel=0, penable=0, pwrite=0,
+  paddr=3d, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5620: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 5620: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x3d
+UVM_INFO Apb_monitor.sv(41) @ 5640: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5640 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 3d, pwdata = 0, prdata = 30e9a801, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 5670: uvm_test_top.env.soc [APB_SCB] MATCH:  address 3d -> 30e9a801
+UVM_INFO Apb_sequence.sv(24) @ 5680: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5680 :
+  psel=0, penable=0, pwrite=1,
+  paddr=54, pwdata=92b12adb, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5680: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 5680: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x54, data = 0x92b12adb
+UVM_INFO Apb_monitor.sv(41) @ 5700: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5700 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 54, pwdata = 92b12adb, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 5740: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5740 :
+  psel=0, penable=0, pwrite=0,
+  paddr=54, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5740: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 5740: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x54
+UVM_INFO Apb_monitor.sv(41) @ 5760: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5760 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 54, pwdata = 0, prdata = 92b12adb, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 5790: uvm_test_top.env.soc [APB_SCB] MATCH:  address 54 -> 92b12adb
+UVM_INFO Apb_sequence.sv(24) @ 5800: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5800 :
+  psel=0, penable=0, pwrite=1,
+  paddr=20, pwdata=df64029c, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5800: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 5800: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0x20, data = 0xdf64029c
+UVM_INFO Apb_monitor.sv(41) @ 5820: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5820 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = 20, pwdata = df64029c, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 5860: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5860 :
+  psel=0, penable=0, pwrite=0,
+  paddr=20, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5860: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 5860: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0x20
+UVM_INFO Apb_monitor.sv(41) @ 5880: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5880 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = 20, pwdata = 0, prdata = df64029c, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 5910: uvm_test_top.env.soc [APB_SCB] MATCH:  address 20 -> df64029c
+UVM_INFO Apb_sequence.sv(24) @ 5920: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5920 :
+  psel=0, penable=0, pwrite=1,
+  paddr=a1, pwdata=17022f44, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5920: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(20) @ 5920: uvm_test_top.env.agent.drv [DRV] WRITE -> addr = 0xa1, data = 0x17022f44
+UVM_INFO Apb_monitor.sv(41) @ 5940: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 5940 : Observed - psel = 1, penable = 1, pwrite = 1, paddr = a1, pwdata = 17022f44, prdata = 0, pready = 1
+UVM_INFO Apb_sequence.sv(24) @ 5980: uvm_test_top.env.agent.seq@@seq [SEQ] 
+Sequence Randomized values at time 5980 :
+  psel=0, penable=0, pwrite=0,
+  paddr=a1, pwdata=0, prdata=0, pready=0
+UVM_INFO Apb_driver.sv(65) @ 5980: uvm_test_top.env.agent.drv [DRV] Got item from sequence
+UVM_INFO Apb_driver.sv(43) @ 5980: uvm_test_top.env.agent.drv [DRV] READ -> addr = 0xa1
+UVM_INFO Apb_monitor.sv(41) @ 6000: uvm_test_top.env.agent.mon [MONITOR] 
+ monitor 6000 : Observed - psel = 1, penable = 1, pwrite = 0, paddr = a1, pwdata = 0, prdata = 17022f44, pready = 1
+UVM_INFO Apb_scoreboard.sv(28) @ 6030: uvm_test_top.env.soc [APB_SCB] MATCH:  address a1 -> 17022f44
+UVM_INFO /home/install/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 6040: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  452
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[APB_SCB]    50
+[DRV]   200
+[MONITOR]   100
+[RNTST]     1
+[SEQ]   100
+[TEST_DONE]     1
+Simulation complete via $finish(1) at time 6040 NS + 49
+/home/install/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Jul 31, 2025 at 05:18:40 EDT  (total: 00:00:06)

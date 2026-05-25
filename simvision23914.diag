@@ -1,0 +1,60 @@
+*** Message Type: info ***
+When: Fri Jul 25 02:33:30 AM EDT 2025
+SimVision started.
+Version: TOOL:  simvision(64)   15.20-s086
+User: raju
+Host: localhost
+Platform: Linux/x86_64/3.10.0-1160.el7.x86_64
+Started: Fri Jul 25 02:33:30 AM EDT 2025
+Command: /home/install/INCISIVE152/tools.lnx86/simvision/bin/64bit/simvision.exe waves.shm
+Work Directory: /home/raju/apb_uvm
+ 
+*** Message Type: info ***
+When: Fri Jul 25 02:33:36 AM EDT 2025
+Create waveform window: "Waveform 1"
+ 
+*** Message Type: info ***
+When: Fri Jul 25 02:34:25 AM EDT 2025
+Create console window: "Console"
+ 
+*** Message Type: info ***
+When: Fri Jul 25 02:34:30 AM EDT 2025
+Create utility window: "Properties"
+ 
+*** Message Type: info ***
+When: Fri Jul 25 05:59:36 AM EDT 2025
+Create source window: "Source Browser 1"
+ 
+*** Message Type: info ***
+When: Fri Jul 25 05:59:54 AM EDT 2025
+Delete waveform window: "Waveform 1"
+ 
+*** Message Type: error ***
+When: Fri Jul 25 06:00:47 AM EDT 2025
+invalid command name "::timeaxis0"
+    while executing
+"$_timeaxis convert t2exp $time"
+    (method "::WaveWindow::seeTime" body line 2)
+    invoked from within
+"seeTime [$itk_option(-markerdata) marker cget  $itk_option(-markerprimary) -time]"
+    (method "::WaveWindow::_doGotoCause" body line 59)
+    invoked from within
+"_doGotoCause $cnode"
+    ("@goto-cause" arm line 2)
+    invoked from within
+"switch -glob -- $dclickpref {
+       @no-action {
+               # Do nothing
+       }
+            @goto-cause {
+                _doGotoCause $cnode
+            }
+           ..."
+    (method "::WaveWindow::_moveCursor" body line 337)
+    invoked from within
+"::.waveWindow0 _moveCursor cursor 439 114 -double"
+    (in namespace inscope "::WaveWindow" script line 1)
+    invoked from within
+"namespace inscope ::WaveWindow {::.waveWindow0 _moveCursor cursor 439 114 -double}"
+    (command bound to event)
+ 
